@@ -1,6 +1,7 @@
 .header{
     margin-left: 47px;
     display: flex;
+    background-color: #FFFFFF;
   }
   
   .header h1{
