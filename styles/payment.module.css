@@ -14,8 +14,6 @@
 
 .card form{
     margin-left: 20px;
-    /*grid-template-columns: 1fr 3fr;*/
-    /*display:grid;*/
 }
 
 
@@ -27,11 +25,6 @@
     width: 359px;
     height: 44px;
 }
-/*
-.card .secondLine label{
-    display: inline;
-    grid-template-columns: 1fr 3fr;
-}*/
 
 .secondLine {
     display: flex;
@@ -40,8 +33,6 @@
 
 
 .inputFields .secondLine input{
-    /*display: inline;*/
-    /*grid-template-columns: 1fr 3fr;*/
     width: 200px;
     height: 44px;
 }
