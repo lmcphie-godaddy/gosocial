@@ -5,6 +5,9 @@ import Header from "../sections/components/header.js";
 import Info from "../sections/components/info";
 import indexStyles from "../styles/pages/index.module.css";
 import Payment from '../sections/components/payment.js';
+import YourInfo from '../sections/components/yourInfo.js';
+import styles from '../styles/pages/index.module.css';
+
 
 const IndexPage = () => {
   return (
@@ -13,11 +16,13 @@ const IndexPage = () => {
         <title>GoSocial</title>
       </Head>
 
-      <Header />
-      <Info />
-       <Payment/>
-    </div>
-  );
-};
+      <Header/>
+      <div className={styles.background}>
+        <YourInfo/>
+        <Payment/>
+      </div>
+      </>
+  )
+  };
 
 export default IndexPage;
