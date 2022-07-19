@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gasket build",
     "start": "gasket start",
-    "local": "gasket local",
+    "local": "concurrently \"gasket local\" \"node server.js\"",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
@@ -18,7 +18,11 @@
     "@gasket/plugin-jest": "^6.24.0",
     "@gasket/preset-nextjs": "^6.29.0",
     "@gasket/redux": "^6.24.0",
-    "express": "^4.16.3",
+    "child_process": "^1.0.2",
+    "concat-stream": "^2.0.0",
+    "concurrently": "^7.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
     "lodash.merge": "^4.6.0",
     "next": "^12.0.8",
     "next-redux-wrapper": "^7.0.5",
@@ -26,12 +30,32 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.1.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "router": "^1.3.7"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "jest": "^27.4.3",
     "webpack": "^5.21.2"
+  },
+  "main": "gasket.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmcphie-godaddy/gosocial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmcphie-godaddy/gosocial/issues"
+  },
+  "homepage": "https://github.com/lmcphie-godaddy/gosocial#readme",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
