@@ -3,28 +3,37 @@ import paymentStyles from "../../styles/payment.module.css";
 const payment = () => {
     return (
       <div className={paymentStyles.payment}>
+        <div className={paymentStyles.card}>
         <h1>Payment</h1>
         <form>
-            <label id="firstNameLabel" htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="Bob"></input>
-
-            <label id="lastNameLabel" htmlFor="lastName">Last Name</label>
-            <input type="text" id="lasttName" placeholder="Robert"></input><br></br><br></br>
-
-            <label id="emailLabel" htmlFor="email">Email</label>
-            <input type="text" id="email" placeholder="bob@robert.com"></input>
-            
-            <label id="phoneLabel" htmlFor="phone">Phone Number</label>
-            <input type="text" id="phone" placeholder="111-222-3333"></input><br></br><br></br>
-
-            <label id="emailLabel" htmlFor="email">Email</label>
-            <input type="text" id="email" placeholder="bob@robert.com"></input>
-
-
-
+          <div className={paymentStyles.inputFields}>
+            <div className={paymentStyles.firstLine}>
+              <label id="cardholderLabel" htmlFor="holderName">Cardholder Name</label><br></br>
+              <input type="text" id="cardHolder" placeholder="Bob Robert"></input><br></br><br></br>
+            </div>
+            <div className={paymentStyles.secondLine}>
+              <div className={paymentStyles.box}>
+                <label id="cardNumberLabel" htmlFor="cardNumber">Card Number</label><br></br>
+                <input type="text" id="cardNumber" placeholder="987654321111"></input>
+              </div>
+              <div className={paymentStyles.box}>
+                <label id="expirationLabel" htmlFor="expiration">Expiration Date</label><br></br>
+                <input type="text" id="expiration" placeholder="12/22/2026"></input>
+              </div>
+              <div className={paymentStyles.box}>
+                <label id="cvvLabel" htmlFor="cvv">CVV</label><br></br>
+                <input type="text" id="cvv" placeholder="000"></input><br></br><br></br>
+              </div>
+            </div>
+            <div className={paymentStyles.thirdLine}>
+              <label id="billingLabel" htmlFor="billing">Billing Address</label><br></br>
+              <input type="text" id="billing" placeholder="111 North Street City, State ZIP"></input>
+            </div>
+          </div>
         </form>
+        </div>
       </div>
     )
-  }
+}
   
-  export default payment
+export default payment

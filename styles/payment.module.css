@@ -1,0 +1,43 @@
+.card{
+    width: 811px;
+    height: 360px;
+    background-color: pink;
+    margin-left: 20px;
+    box-shadow: 5px 5px #C7C8C9;
+}
+
+.card h1 {
+    font-size: 40px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.card form{
+    margin-left: 20px;
+}
+
+
+.card label{
+    font-size: 16px;
+}
+
+.card .firstLine input{
+    width: 359px;
+    height: 44px;
+}
+
+.secondLine {
+    display: flex;
+    grid-gap: 20px;
+}
+
+
+.inputFields .secondLine input{
+    width: 200px;
+    height: 44px;
+}
+
+.inputFields .thirdLine input{
+    width: 742px;
+    height: 44px;
+}
