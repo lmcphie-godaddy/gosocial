@@ -1,0 +1,12 @@
+.YourInfo{
+    width: 811px;
+    height: 443px;
+    background-color: yellow;
+    margin-left: 20px;
+}
+
+.YourInfo h1{
+    font-size: 40px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
