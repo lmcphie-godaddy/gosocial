@@ -1,37 +1,28 @@
 .info{
-position:absolute;
-  /* line-height: 48px; */
-  left: 88px;
-  background-color: #FFFFFF;
-  padding-left: 37px;
-  height:395px;
-
+  position: absolute;
+  width: 811px;
+  height: 443px;
+  /* left: 51px;
+  top: 210px; */
+  
+  background: #FFFFFF;
 }
-
 .req{
   color: red;
 }
 
-.label{
-  display:block;
-  margin-right:20px;
+.firstLine{
+  padding-left: 39px;
 }
 
+.secondLine{
 
-.input{
-  
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding:10px;
-  margin:10px 0;
-  width: 50%;
-  flex-direction: column;
 }
 
-.input_bottom{
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding:10px;
-  margin:10px 0;
-  width:100%;
+.box{
+  box-sizing: border-box;
+
+/* position: absolute; */
+width: 359px;
+height: 44px;
 }
