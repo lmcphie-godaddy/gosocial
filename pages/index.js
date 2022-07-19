@@ -4,7 +4,7 @@ import Head from "../components/head";
 import Header from "../sections/components/header.js";
 import Info from "../sections/components/info";
 import indexStyles from "../styles/pages/index.module.css";
-import Payment from '../sections/components/payment.js';
+import Payment from "../sections/components/payment.js";
 
 const IndexPage = () => {
   return (
@@ -15,7 +15,7 @@ const IndexPage = () => {
 
       <Header />
       <Info />
-       <Payment/>
+      <Payment />
     </div>
   );
 };
