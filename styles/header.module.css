@@ -1,0 +1,10 @@
+.header{
+    margin-left: 47px;
+    display: flex;
+  }
+  
+  .header h1{
+    padding-left: 20px;
+    border-left: 3px solid #09757A;
+    font-weight: 300;
+  }
