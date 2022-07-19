@@ -1,4 +1,6 @@
+from turtle import back
 from PIL import Image, ImageDraw, ImageFont
+#import numpy
 
 # create Image object
 text1 = 'Fernando\'s'
@@ -13,7 +15,7 @@ font = 'Roboto-Bold.ttf'
 solidColor = True
 
 background = Image.open('gradient.jpeg')
-foreground = Image.open('godaddylogo.png')
+foreground = Image.open('poweredbygodaddy.png')
 
 colors = {
     'dark_blue':{'c':(27,53,81),'p_font':'rgb(255,255,255)','s_font':'rgb(255, 212, 55)'},
