@@ -3,19 +3,18 @@ from PIL import Image, ImageDraw, ImageFont
 #import numpy
 
 # create Image object
-text1 = 'Fernando\'s'
-text2 = 'Flower Shop'
+text1 = 'Karen\'s'
+text2 = 'Bake Shop'
 
-img_name = './exports/ZoomBG.png'
-
-color = 'blue'
-
+img_name = './exports/firstyear.png'
+color = 'grey'
 font = 'Roboto-Bold.ttf'
+solidColor = False
+font_color = 'white'
 
-solidColor = True
 
-background = Image.open('./assets/gradient.jpeg')
-foreground = Image.open('./assets/poweredbygodaddy.png')
+background = Image.open('./assets/firstyearbg.png')
+foreground = None
 
 colors = {
     'dark_blue':{'c':(27,53,81),'p_font':'rgb(255,255,255)','s_font':'rgb(255, 212, 55)'},
@@ -30,6 +29,11 @@ colors = {
     'green':{'c':(65, 162, 77),'p_font':'rgb(217, 210, 192)','s_font':'rgb(0, 0, 0)'}
     }
 
+font_colors = {
+    'red': 'rgb(255,0,0)',
+    'white': 'rgb(255,255,255)'
+}
+
 def add_color(image,c,transparency):
     color = Image.new('RGB',image.size,c)
     mask = Image.new('RGBA',image.size,(0,0,0,transparency))
@@ -40,41 +44,55 @@ def center_text(img,font,text1,text2,fill1,fill2):
     w,h = img.size # get width and height of image
     t1_width, t1_height = draw.textsize(text1, font) # Get text1 size
     t2_width, t2_height = draw.textsize(text2, font) # Get text2 size
-    p1 = ((w-t1_width)/2,h // 3) # H-center align text1
-    p2 = ((w-t2_width)/2,h // 3 + h // 5) # H-center align text2
+    p1 = ((w-t1_width)/2, 40) # H-center align text1
+    p2 = ((w-t2_width)/2, 40 + t2_height//1.3) # H-center align text2
     draw.text(p1, text1, fill=fill1, font=font) # draw text on top of image
     draw.text(p2, text2, fill=fill2, font=font) # draw text on top of image
     return img
 
 def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=75):
     draw = ImageDraw.Draw(img)
- 
-    p_font = color['p_font']
-    s_font = color['s_font']
+
+    if solidColor:
+        p_font = color['p_font']
+        s_font = color['s_font']
+    
+    else:
+        p_font = s_font = font_colors[font_color]
      
     # starting position of the message
     img_w, img_h = img.size
     font = ImageFont.truetype(font,size=font_size)
- 
-    text1_offset = (10, 0)
-    text2_offset = (10, 70)
-    draw.text(text1_offset, text1, fill=p_font, font=font)
-    draw.text(text2_offset, text2, fill=s_font, font=font)
     
+    center_text(img,font,text1,text2,p_font,s_font)
+
     return img
 
 def add_logo(background,foreground):
     bg_w, bg_h = background.size
     img_w, img_h = foreground.size
-    #img_w, img_h = (foreground.size[0] // 3, foreground.size[1] // 3)
     img_offset = ((bg_w - img_w), (bg_h - img_h))
     background.paste(foreground, img_offset, foreground)
     return background
+
+def add_corners(im, rad):
+    circle = Image.new('L', (rad * 2, rad * 2), 0)
+    draw = ImageDraw.Draw(circle)
+    draw.ellipse((0, 0, rad * 2, rad * 2), fill=255)
+    alpha = Image.new('L', im.size, 255)
+    w, h = im.size
+    alpha.paste(circle.crop((0, 0, rad, rad)), (0, 0))
+    alpha.paste(circle.crop((0, rad, rad, rad * 2)), (0, h - rad))
+    alpha.paste(circle.crop((rad, 0, rad * 2, rad)), (w - rad, 0))
+    alpha.paste(circle.crop((rad, rad, rad * 2, rad * 2)), (w - rad, h - rad))
+    im.putalpha(alpha)
+    return im
 
 def write_image(background,color,text1,text2,foreground=''):
     if solidColor:
         background = add_color(background,color['c'],25) #comment this out if you want an image for a background or a simple color
     if not foreground:
+        add_corners(background, 40)
         add_text(background,color,text1,text2)
     else:
         add_text(background,color,text1,text2,logo=True)

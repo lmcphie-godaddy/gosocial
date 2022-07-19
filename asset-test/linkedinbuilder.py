@@ -4,16 +4,16 @@ from PIL import Image, ImageDraw, ImageFont
 text1 = 'Fernando\'s'
 text2 = 'Flower Shop'
 
-img_name = 'sample-linkedin.png'
+img_name = './exports/sample-linkedin.png'
 
-color = 'dark_blue'
+color = 'light_blue'
 
 font = 'Roboto-Bold.ttf'
 
 solidColor = True
 
-background = Image.open('gradient-linkedin.jpeg')
-foreground = Image.open('godaddylogo.png')
+background = Image.open('./assets/gradient-linkedin.jpeg')
+foreground = Image.open('./assets/godaddylogo.png')
 
 colors = {
     'red':{'c':(255,0,0),'p_font':'rgb(0,0,0)','s_font':'rgb(0,0,0)'},
