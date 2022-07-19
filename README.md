@@ -1,6 +1,6 @@
 # go-social
 
-A basic gasket app
+GoDaddy 2022 Intern Week Hackathon
 
 ## Setup
 
