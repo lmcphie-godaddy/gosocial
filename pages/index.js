@@ -15,10 +15,8 @@ const IndexPage = () => {
 
       <Header/>
       <div className={styles.background}>
-
-      {/*your info area here */}
-      <YourInfo/>
-      <Payment/>
+        <YourInfo/>
+        <Payment/>
       </div>
       </>
   )
