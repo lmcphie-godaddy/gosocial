@@ -9,5 +9,5 @@ cd go-social
 
 npm install
 
-npx gasket local
+npm run local
 ```
