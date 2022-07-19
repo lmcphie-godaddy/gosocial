@@ -3,6 +3,7 @@
     height: 360px;
     background-color: pink;
     margin-left: 20px;
+    box-shadow: 5px 5px #C7C8C9;
 }
 
 .card h1 {
