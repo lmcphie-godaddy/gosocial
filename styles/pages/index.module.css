@@ -39,3 +39,11 @@
 .completeButton :hover{
   background-color: #00A4A6;
 }
+
+.modal{
+  text-align: center;
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+}

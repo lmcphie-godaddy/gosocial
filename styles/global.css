@@ -1,0 +1,23 @@
+.ux-text.ux-text-title {
+  --uxText--fontSize0: var(--ux-jg1026, var(--ux-18ime9a, 1.5rem));
+  --uxText--lineHeight: var(--ux-10e88h5, var(--ux-1pw8hzd, 1.25));
+  font-family: var(--ux-1q87e65, var(--ux-p4wcd9, sans-serif));
+  font-weight: var(--ux-1b8kf4b, var(--ux-1a9e4a3, 700));
+  text-align: center!important;
+}
+
+.ux-modal[aria-modal] {
+  color: var(--ux-1leynsm, black);
+  background-color: var(--ux-cao06b, white);
+  border-color: var(--ux-97h3vl, lightgray);
+  border-width: var(--ux-19wr3kq, 1px);
+  border-radius: var(--ux-2jubes, 2px);
+  padding: 2rem;
+  text-align: center!important;
+}
+
+.ux-button.ux-button-primary {
+  background-color: #347379!important;
+  color: var(--ux-1tmjflg, var(--ux-t04p4h, white));
+  border-color: var(--ux-pv1fr7, var(--ux-kdwujq, transparent));
+}
