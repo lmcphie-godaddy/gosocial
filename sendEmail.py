@@ -46,7 +46,7 @@ def sendEmailWithAttach(Subject, emailBody, file_content, file_name):
     
     msg['Subject'] = Subject
     msg['From'] = 'lmcphie@godaddy.com' 
-    msg['To'] = 'lmcphie@godaddy.com'
+    msg['To'] = 'shusain@godaddy.com'
         
     smtpServer = smtplib.SMTP('relay.godaddy.com')
     smtpServer.sendmail(msg['From'],msg['To'],msg.as_string())

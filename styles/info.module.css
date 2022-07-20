@@ -1,0 +1,32 @@
+.info{
+  position: absolute;
+  width: 811px;
+  height: 443px;
+  /* left: 51px;
+  top: 210px; */
+  
+  background: #FFFFFF;
+}
+.req{
+  color: red;
+}
+
+.firstLine{
+  padding-left: 39px;
+}
+
+.secondLine{
+
+}
+
+.box{
+  box-sizing: border-box;
+
+/* position: absolute; */
+width: 359px;
+height: 44px;
+}
+
+.inputFields{
+  
+}

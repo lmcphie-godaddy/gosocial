@@ -1,26 +1,34 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import Head from '../components/head';
-import GasketEmblem from '@gasket/assets/react/gasket-emblem';
+import React from "react";
+import Head from "../components/head";
+import Header from "../sections/components/header.js";
+import Payment from "../sections/components/payment.js";
+import YourInfo from "../sections/components/yourInfo.js";
+import styles from "../styles/pages/index.module.css";
+import Item from "../sections/components/items.js";
 
-const pageStyle = { textAlign: 'center' };
-const logoStyle = { width: '250px', height: '250px' };
 
 const sendEmail = () => {
   fetch("http://localhost:9002")
   .then(res => {console.log("success")}).catch(err => console.log(err))
 };
 
-export const IndexPage = () => (
-  <div style={ pageStyle }>
-    <Head title='Home'/>
-    <GasketEmblem style={ logoStyle }/>
-    <h1>Welcome to Gasket!</h1>
-    <p>To get started, edit <code>pages/index.js</code> and save to reload.</p>
-    <p><a href='https://gasket.dev'>Learn Gasket</a></p>
-    <button onClick={sendEmail} >submit</button>
-  </div>
-);
+const IndexPage = () => {
+  return ( <>
+      <Header />
+      <div className={styles.background}>
+        <div className={styles.wrapper}>
+          <YourInfo />
+          <Item />
+          <Payment />
+          <div className={styles.completeButton}>
+            <button type="button" onClick={sendEmail}>Complete Checkout</button>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+};
 
 export default IndexPage;
 // useState
