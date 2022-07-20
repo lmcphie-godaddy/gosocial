@@ -32,10 +32,28 @@ color: #706E6E;
 
 }
 
-.price{
-left: 1568.99px;
-top: 349px;
+.price1{
+  margin-left: 265px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #347379;
+  
+  }
 
+.price2{
+  margin-left: 235px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #347379;
+  
+  }
+
+.price3{
+margin-left: 270px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
@@ -43,6 +61,17 @@ font-size: 22px;
 color: #347379;
 
 }
+
+
+.pricet{
+  margin-left: 380px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #347379;
+  
+  }
 
 .hr{
   margin-left: 31px;
