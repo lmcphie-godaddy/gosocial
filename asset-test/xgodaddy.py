@@ -3,8 +3,8 @@ from PIL import Image, ImageDraw, ImageFont
 #import numpy
 
 # create Image object
-text1 = 'Fernando\'s'
-text2 = 'Flower Shop'
+text1 = 'Amy\'s'
+text2 = 'Bake Shop'
 
 img_name = './exports/xgodaddy.png'
 color = 'grey'
