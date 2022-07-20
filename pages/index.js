@@ -6,6 +6,7 @@ import Payment from '../sections/components/payment.js';
 import YourInfo from '../sections/components/yourInfo.js';
 import Item from '../sections/components/items.js';
 import styles from '../styles/pages/index.module.css';
+import Button from '@ux/button';
 
 
 const IndexPage = () => {
@@ -22,6 +23,9 @@ const IndexPage = () => {
         <YourInfo/>
         <Item/>
         <Payment/>
+        <div className={styles.completeButton}>
+        <button type="button">Complete Checkout</button>
+        </div>
         </div>
         
       </div>

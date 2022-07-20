@@ -10,3 +10,29 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
   }
+
+  
+  .completeButton{
+    grid-column: 2;
+    grid-row: 2 /2;
+    width: 600px;
+    height: 50px;
+    margin-top: 0px;
+  }
+
+  .completeButton button{
+    width: 600px;
+    background-color: #347379;
+    grid-column: 2;
+    grid-row: 2 /2;
+    height: 50px;
+    margin-top: 0px;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    border: none;
+  }
+
+  .completeButton :hover{
+    background-color: #00A4A6;
+  }
