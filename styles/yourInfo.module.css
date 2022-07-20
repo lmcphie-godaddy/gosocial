@@ -1,7 +1,7 @@
 .YourInfo{
     width: 811px;
     height: 443px;
-    background-color: yellow;
+    background-color: white;
     margin-left: 20px;
 }
 
@@ -9,4 +9,49 @@
     font-size: 40px;
     margin-left: 20px;
     padding-top: 20px;
+}
+.YourInfo form{
+    margin-left: 20px;
+}
+
+.YourInfo label{
+    font-size: 16px;
+}
+
+.req{
+    color: red;
+}
+
+.firstLine {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.YourInfo .firstLine input{
+    width: 359px;
+    height: 44px;
+}
+
+.secondLine {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.inputFields .secondLine input{
+    width: 200px;
+    height: 44px;
+}
+
+.inputFields .thirdLine input{
+    width: 742px;
+    height: 44px;
+}
+
+.inputFields .fourthLine{
+   margin-top: 2%;
+}
+
+.inputFields .fourthLine input{
+    width: 742px;
+    height: 44px;
 }
