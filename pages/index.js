@@ -10,6 +10,7 @@ import styles from '../styles/pages/index.module.css';
 
 const IndexPage = () => {
   return (
+    <>
     <div className={indexStyles.index}>
       <Head>
         <title>GoSocial</title>
@@ -24,7 +25,8 @@ const IndexPage = () => {
         </div>
         
       </div>
-      </>
+    </div>
+    </>
   )
   };
   
