@@ -20,6 +20,9 @@ const IndexPage = () => {
           <YourInfo />
           <Item />
           <Payment />
+          <div className={styles.completeButton}>
+            <button type="button">Complete Checkout</button>
+          </div>
         </div>
       </div>
     </>
