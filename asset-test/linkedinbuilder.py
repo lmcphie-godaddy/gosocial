@@ -1,16 +1,12 @@
 from PIL import Image, ImageDraw, ImageFont
 
-# create Image object
-text1 = 'Fernando\'s'
-text2 = 'Flower Shop'
-
-img_name = './exports/sample-linkedin.png'
-
-color = 'light_blue'
+# Name of business separated in two lines
+text1 = 'Leandra\'s'
+text2 = 'Art Store'
 
 font = 'Roboto-Bold.ttf'
 
-solidColor = True
+solidColor = True # True if not given a background image
 
 background = Image.open('./assets/gradient-linkedin.jpeg')
 foreground = Image.open('./assets/godaddylogo.png')
@@ -54,8 +50,8 @@ def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=7
     draw = ImageDraw.Draw(img)
  
     if solidColor:
-        p_font = color['p_font']
-        s_font = color['s_font']
+        p_font = color['p_font'] # 1st line of business name
+        s_font = color['s_font'] # 2nd line of business name
     
     else:
         p_font = s_font = font_colors[font_color]
@@ -64,6 +60,7 @@ def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=7
     img_w, img_h = img.size
     font = ImageFont.truetype(font,size=font_size)
     
+    #message needs to be centered on y axis
     center_text(img,font,text1,text2,p_font,s_font)
 
     return img
@@ -71,21 +68,28 @@ def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=7
 def add_logo(background,foreground):
     bg_w, bg_h = background.size
     img_w, img_h = foreground.size
-    #img_w, img_h = (foreground.size[0] // 3, foreground.size[1] // 3)
-    img_offset = ((bg_w - img_w), (bg_h - img_h))
+    img_offset = ((bg_w - img_w), (bg_h - img_h)) #godaddy logo bottom right
     background.paste(foreground, img_offset, foreground)
     return background
 
 def write_image(background,color,text1,text2,foreground=''):
     if solidColor:
-        background = add_color(background,color['c'],25) #comment this out if you want an image for a background or a simple color
+        background = add_color(background,color['c'],25) 
+    
     if not foreground:
         add_text(background,color,text1,text2)
+    
     else:
         add_text(background,color,text1,text2,logo=True)
         add_logo(background,foreground)
+    
     return background
 
 if __name__ == '__main__':
-    background = write_image(background,colors[color],text1,text2,foreground=foreground)
-    background.save(img_name) 
+    
+    for key in colors:
+        img_name = './exports/LinkedIn/'
+        background = write_image(background,colors[key],text1,text2,foreground=foreground)
+        img_name = img_name + "linkedin-" + key + ".jpg"
+        print(img_name)
+        background.save(img_name) 

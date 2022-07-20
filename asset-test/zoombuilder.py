@@ -2,19 +2,15 @@ from turtle import back
 from PIL import Image, ImageDraw, ImageFont
 #import numpy
 
-# create Image object
-text1 = 'Fernando\'s'
-text2 = 'Flower Shop'
-
-img_name = './exports/ZoomBG.png'
-
-color = 'blue'
+# Name of business separated in two lines
+text1 = 'Amy\'s'
+text2 = 'Bake Shop'
 
 font = 'Roboto-Bold.ttf'
 
-solidColor = True
+solidColor = True # True if not given a background image
 
-background = Image.open('./assets/gradient.jpeg')
+background = Image.open('./assets/gradient.jpeg') #disregarded if solidColor is True but uses same dimensions
 foreground = Image.open('./assets/poweredbygodaddy.png')
 
 colors = {
@@ -49,14 +45,14 @@ def center_text(img,font,text1,text2,fill1,fill2):
 def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=75):
     draw = ImageDraw.Draw(img)
  
-    p_font = color['p_font']
-    s_font = color['s_font']
+    p_font = color['p_font'] # 1st line of business name
+    s_font = color['s_font'] # 2nd line of business name
      
     # starting position of the message
     img_w, img_h = img.size
     font = ImageFont.truetype(font,size=font_size)
  
-    text1_offset = (10, 0)
+    text1_offset = (10, 0) # Need it to be top right
     text2_offset = (10, 70)
     draw.text(text1_offset, text1, fill=p_font, font=font)
     draw.text(text2_offset, text2, fill=s_font, font=font)
@@ -66,21 +62,30 @@ def add_text(img,color,text1,text2,logo=False,font='Roboto-Bold.ttf',font_size=7
 def add_logo(background,foreground):
     bg_w, bg_h = background.size
     img_w, img_h = foreground.size
-    #img_w, img_h = (foreground.size[0] // 3, foreground.size[1] // 3)
-    img_offset = ((bg_w - img_w), (bg_h - img_h))
+    img_offset = ((bg_w - img_w), (bg_h - img_h)) #need it to be bottom left
     background.paste(foreground, img_offset, foreground)
     return background
 
 def write_image(background,color,text1,text2,foreground=''):
     if solidColor:
-        background = add_color(background,color['c'],25) #comment this out if you want an image for a background or a simple color
+        background = add_color(background,color['c'],25)
+    
     if not foreground:
         add_text(background,color,text1,text2)
+    
     else:
         add_text(background,color,text1,text2,logo=True)
         add_logo(background,foreground)
+    
     return background
 
 if __name__ == '__main__':
-    background = write_image(background,colors[color],text1,text2,foreground=foreground)
-    background.save(img_name) 
+    
+    for key in colors:
+        img_name = './exports/ZoomBG/'
+        background = write_image(background,colors[key],text1,text2,foreground=foreground)
+        img_name = img_name + "zoom-" + key + ".jpg"
+        print(img_name)
+        background.save(img_name) 
+    
+    
