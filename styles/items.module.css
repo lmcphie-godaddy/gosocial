@@ -1,0 +1,14 @@
+.Items{
+    background-color: green;
+    width: 600px;
+    height: 764px;
+    margin-top: 15px;
+    grid-row: 1/2;
+    grid-column: 2;
+    float: right;
+    box-shadow: 5px 5px #C7C8C9;
+}
+
+.Items h1{
+    margin-left: 20px;
+}
